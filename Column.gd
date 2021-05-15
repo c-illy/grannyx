@@ -2,10 +2,12 @@
 extends Node2D
 
 export (PackedScene) var UnitSprite
+export (PackedScene) var EdgesColumn
 
 export var unitsCount = 1
 
 var tmpUnitsCount = 0
+var h = 1
 
 #var tmpMultiDelta = 0
 
@@ -23,10 +25,11 @@ var tmpUnitsCount = 0
 func _process(delta):
 	
 	#fill column bottom with individual units, but only the 'expBase' first ones + 1
-	while (tmpUnitsCount <= ceil(Models.expBase) + 1) and (tmpUnitsCount < unitsCount) :
+	var b = ceil(Models.expBase)
+	while (tmpUnitsCount <= b + 1) and (tmpUnitsCount < unitsCount) :
 		var u = UnitSprite.instance()
 		add_child(u)
-		var h = u.scale.y
+		h = u.scale.y
 		u.position.y = - h * tmpUnitsCount * 3
 		u.texture.width = Models.unitWidth;
 		tmpUnitsCount += 1
@@ -43,15 +46,31 @@ func _process(delta):
 		var deltaRatio = fillRatioSpeed * delta #tmpMultiDelta
 		var deltaU = deltaRatio * unitsCount
 		#now forget about ratios
-		tmpUnitsCount += deltaU # but :
+		tmpUnitsCount += deltaU # unless too high :
 		if tmpUnitsCount > unitsCount :
 			tmpUnitsCount = unitsCount
 		var iLast = get_child_count() - 1
 		var u = get_child(iLast) # last unit
-		var h = get_child(0).scale.y
+		#h = get_child(0).scale.y
 		u.scale.y = h * (tmpUnitsCount - iLast) * 3
 		u.position.y = - h * (tmpUnitsCount-1) * 3
-	else : #end, unregister _process() method
+	else : #end, add edges and unregister _process() method
+		var x = get_index()
+		if (0 < x) && (x < 3):
+			var prevCount = ceil(pow(Models.expBase, x-1))
+			for i in prevCount :
+				var yStart = -i * h * 3
+				var yEnd = yStart * Models.expBase
+				var e = EdgesColumn.instance()
+				if i < prevCount-1 :
+					e.edgesCount = b
+				else :
+					e.edgesCount = unitsCount - (b * (prevCount-1))
+				e.unitHeight = h
+				e.yEndOffset = yEnd - yStart
+				add_child(e)
+				e.position.y = yStart
+				e.position.x = -Models.unitWidth
 		set_process(false) #unsignificant impact but good practice when possible
 	
 #	tmpMultiDelta = 0

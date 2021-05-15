@@ -16,7 +16,6 @@ func _ready():
 func _process(_delta):
 	var w = Models.unitWidth
 	while tmpColumnsCount < Models.columnsCount :
-#	for i in Models.columnsCount:
 		var c = Column.instance()
 		c.unitsCount = ceil(pow(Models.expBase, tmpColumnsCount))
 		c.position.x = w * tmpColumnsCount * 2
