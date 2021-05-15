@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Hud.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Curve.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Camera2D.gd" type="Script" id=3]
+
+[node name="Main" type="Node"]
+
+[node name="Curve" parent="." instance=ExtResource( 2 )]
+position = Vector2( 13.13, 490 )
+
+[node name="Hud" parent="." instance=ExtResource( 1 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+limit_top = -1410065408
+limit_bottom = 10000
+script = ExtResource( 3 )

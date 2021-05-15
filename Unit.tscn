@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.08, 1, 0.356, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 20
+
+[node name="UnitSprite" type="Sprite"]
+texture = SubResource( 2 )
+centered = false
+__meta__ = {
+"_editor_description_": ""
+}
