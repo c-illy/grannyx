@@ -4,8 +4,8 @@ extends Node
 export var unitWidth = 20
 export var expBase = 1.8
 export var columnsCount = 1
-export var zoomX = 1
-export var zoomY = .2
+export var zoomX = .4
+export var zoomY = .3
 
 signal base_changed
 signal columns_count_changed

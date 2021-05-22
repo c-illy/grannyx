@@ -24,9 +24,8 @@ var h = 1
 #scale version
 func _process(delta):
 	
-	#fill column bottom with individual units, but only the 'expBase' first ones + 1
-	var b = ceil(Models.expBase)
-	while (tmpUnitsCount <= b + 1) and (tmpUnitsCount < unitsCount) :
+	#fill column bottom with individual units, but only the 90 first ones
+	while (tmpUnitsCount <= 90) and (tmpUnitsCount < unitsCount) :
 		var u = UnitSprite.instance()
 		add_child(u)
 		h = u.scale.y
@@ -42,7 +41,7 @@ func _process(delta):
 	
 	#then continue filling by y-scaling up last unit
 	if tmpUnitsCount < unitsCount :
-		var fillRatioSpeed = 1.2 # ratio of whole column to fill in one second
+		var fillRatioSpeed = 1.7 # ratio of whole column to fill in one second
 		var deltaRatio = fillRatioSpeed * delta #tmpMultiDelta
 		var deltaU = deltaRatio * unitsCount
 		#now forget about ratios
@@ -57,20 +56,11 @@ func _process(delta):
 	else : #end, add edges and unregister _process() method
 		var x = get_index()
 		if (0 < x) && (x < 3):
-			var prevCount = ceil(pow(Models.expBase, x-1))
-			for i in prevCount :
-				var yStart = -i * h * 3
-				var yEnd = yStart * Models.expBase
-				var e = EdgesColumn.instance()
-				if i < prevCount-1 :
-					e.edgesCount = b
-				else :
-					e.edgesCount = unitsCount - (b * (prevCount-1))
-				e.unitHeight = h
-				e.yEndOffset = yEnd - yStart
-				add_child(e)
-				e.position.y = yStart
-				e.position.x = -Models.unitWidth
+			var e = EdgesColumn.instance()
+			e.edgesCount = unitsCount
+			e.unitHeight = h
+			add_child(e)
+			e.position.x = -Models.unitWidth
 		set_process(false) #unsignificant impact but good practice when possible
 	
 #	tmpMultiDelta = 0
