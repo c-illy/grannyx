@@ -1,0 +1,29 @@
+--------------------
+ Droid, version 3.1
+--------------------
+
+The Droid typeface family was designed in the fall of 2006 by Ascender's Steve
+Matteson, as a commission from Google to create a set of system fonts for its
+Android platform. The goal was to provide optimal quality and comfort on a
+mobile handset when rendered in application menus, web browsers and for other
+screen text. It consists of Droid Serif, Droid Sans and Droid Sans Mono.
+
+The font family is available in the Android Git tree as TrueType-flavored
+OpenType files licensed under the Apache License version 2.0.
+
+This package provides support for Droid in LaTeX, including XeLaTeX and
+LuaLaTeX. It includes the original OpenType fonts, as well as Type 1 versions,
+converted for this package using FontForge for full support with LaTeX and
+Dvips.
+
+Notice that this package does not support the Droid Pro family sold by
+Ascender. Notice also that the Noto font family is considered to be the
+successor for Droid, with better Unicode coverage and more weights and shapes
+available.
+
+This package is released under the LaTeX Project Public License, either version
+1.3c or above, with the exception of the .ttf and .pfb files, released under the
+Apache License version 2.0.
+
+If you have comments about the package, please contact Mohamed El Morabity
+(melmorabity AT fedoraproject DOT org).

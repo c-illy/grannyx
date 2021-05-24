@@ -27,7 +27,7 @@ func humanizeIntString(digits) :
 	else :
 		var next = digits.substr(0, digits.length() - 3)
 		var end = digits.substr(digits.length() - 3)
-		return humanizeIntString(next) + " " + end
+		return humanizeIntString(next) + " " + end
 
 # digits = "k", with 0 < k < 1, eg. "0.020"
 func humanizeDecimals(digits) :

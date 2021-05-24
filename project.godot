@@ -18,6 +18,7 @@ _global_script_class_icons={
 config/name="grannyx"
 run/main_scene="res://Main.tscn"
 run/frame_delay_msec=3
+run/low_processor_mode=true
 config/icon="res://icon.png"
 
 [autoload]
@@ -30,12 +31,27 @@ settings/fps/force_fps=8
 
 [display]
 
-window/size/width=800
-window/size/height=500
+window/size/width=950
+window/size/height=650
+window/energy_saving/keep_screen_on=false
+window/ios/hide_home_indicator=false
+
+[gui]
+
+theme/custom_font="res://font/droid_sans.tres"
+
+[locale]
+
+translations=PoolStringArray( "res://text.en.translation", "res://text.fr.translation" )
+
+[logging]
+
+file_logging/enable_file_logging.pc=false
 
 [physics]
 
 common/physics_fps=2
+common/enable_object_picking=false
 
 [rendering]
 
