@@ -11,7 +11,7 @@ Ordre de grandeur de l'intervalle sériel** : 5.2 jours
 [u]Courbe affichée :[/u]
 b : Taux de reproduction (Rt) : [color=#ffcc00]{expBase}[/color]
 En extrême simplification à but explicatif, la courbe des contaminations a l'allure de y = [color=#ffcc00]{expBase}^x[/color]
-(quand x avance de 1, [i]nouveau y[/i] = [i]ancien y[/i] × {expBase}, donc les valeurs successives sont 1, {expBase}, {expBase} × {expBase}, {expBase} × {expBase} × {expBase}…)
+(quand x avance de 1, [i]nouveau y[/i] = [i]ancien y[/i] × {expBase}, donc les valeurs successives sont 1, {expBase}, {expBase} × {expBase}, {expBase} × {expBase} × {expBase}…)
 
 x : [b]{x}[/b] étapes de transmission ont eu lieu, soit [color=#ffcc00]{x_days}[/color] jours
 

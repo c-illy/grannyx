@@ -1,37 +1,52 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Hud.gd" type="Script" id=1]
 [ext_resource path="res://font/droid_sans_bold.tres" type="DynamicFont" id=2]
 [ext_resource path="res://font/droid_serif_italic.tres" type="DynamicFont" id=3]
+[ext_resource path="res://theme.tres" type="Theme" id=4]
+[ext_resource path="res://font/DroidSans.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=3]
+size = 15
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+size = 26
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+use_filter = true
+font_data = ExtResource( 5 )
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="CurveOptionsContainer" type="VBoxContainer" parent="."]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 20.37
+margin_top = 38.9296
+margin_right = 253.37
+margin_bottom = 225.93
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FormulaContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_right = 183.0
-margin_bottom = 14.0
+margin_right = 233.0
+margin_bottom = 19.0
 
 [node name="FormulaLabel" type="Label" parent="CurveOptionsContainer/FormulaContainer"]
-margin_right = 31.0
-margin_bottom = 14.0
+margin_right = 34.0
+margin_bottom = 19.0
 text = "y = b"
 
 [node name="ExponentFormulaLabel" type="Label" parent="CurveOptionsContainer/FormulaContainer/FormulaLabel"]
-margin_left = 31.076
-margin_top = -7.412
-margin_right = 71.076
-margin_bottom = 6.588
-rect_scale = Vector2( 0.75, 0.75 )
+margin_left = 45.1136
+margin_top = -8.21368
+margin_right = 85.1136
+margin_bottom = 10.7863
+custom_fonts/font = SubResource( 3 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -39,53 +54,53 @@ __meta__ = {
 }
 
 [node name="ParamsContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_top = 18.0
-margin_right = 183.0
-margin_bottom = 42.0
+margin_top = 23.0
+margin_right = 233.0
+margin_bottom = 60.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ParamsContainer"]
-margin_top = 5.0
-margin_right = 8.0
-margin_bottom = 19.0
+margin_top = 9.0
+margin_right = 9.0
+margin_bottom = 28.0
 text = "b"
 
 [node name="InputBase" type="SpinBox" parent="CurveOptionsContainer/ParamsContainer"]
-margin_left = 12.0
-margin_right = 86.0
-margin_bottom = 24.0
-min_value = 0.1
+margin_left = 13.0
+margin_right = 111.0
+margin_bottom = 37.0
+min_value = 1.1
 max_value = 12.0
 step = 0.1
 value = 2.7
 
 [node name="Label2" type="Label" parent="CurveOptionsContainer/ParamsContainer"]
-margin_left = 90.0
-margin_top = 5.0
-margin_right = 105.0
-margin_bottom = 19.0
+margin_left = 115.0
+margin_top = 9.0
+margin_right = 131.0
+margin_bottom = 28.0
 text = "  x"
 
 [node name="InputX" type="SpinBox" parent="CurveOptionsContainer/ParamsContainer"]
-margin_left = 109.0
-margin_right = 183.0
-margin_bottom = 24.0
+margin_left = 135.0
+margin_right = 233.0
+margin_bottom = 37.0
 max_value = 80.0
 rounded = true
 
 [node name="ZoomYContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_top = 46.0
-margin_right = 183.0
-margin_bottom = 146.0
+margin_top = 64.0
+margin_right = 233.0
+margin_bottom = 164.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ZoomYContainer"]
-margin_top = 43.0
-margin_right = 47.0
-margin_bottom = 57.0
+margin_top = 40.0
+margin_right = 51.0
+margin_bottom = 59.0
 text = "zoom y"
 
 [node name="ZoomYSlider" type="VSlider" parent="CurveOptionsContainer/ZoomYContainer"]
-margin_left = 51.0
-margin_right = 67.0
+margin_left = 55.0
+margin_right = 71.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 1
@@ -96,21 +111,21 @@ value = 0.3
 exp_edit = true
 
 [node name="ZoomXContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_top = 150.0
-margin_right = 183.0
-margin_bottom = 166.0
+margin_top = 168.0
+margin_right = 233.0
+margin_bottom = 187.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ZoomXContainer"]
-margin_top = 1.0
-margin_right = 47.0
-margin_bottom = 15.0
+margin_right = 51.0
+margin_bottom = 19.0
 text = "zoom x"
 
 [node name="ZoomXSlider" type="HSlider" parent="CurveOptionsContainer/ZoomXContainer"]
-margin_left = 51.0
-margin_right = 151.0
-margin_bottom = 16.0
+margin_left = 55.0
+margin_right = 155.0
+margin_bottom = 19.0
 rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 1
 min_value = 0.4
 max_value = 4.2
 step = 0.2
@@ -123,7 +138,8 @@ margin_left = -20.0
 margin_top = 5.0
 margin_right = 20.0
 margin_bottom = 14.0
-rect_scale = Vector2( 1.5, 1.5 )
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "y = 1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -131,9 +147,9 @@ __meta__ = {
 
 [node name="CommentsContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.958
-anchor_top = 0.02
+anchor_top = 0.04
 anchor_right = 0.99
-anchor_bottom = 0.02
+anchor_bottom = 0.047
 margin_left = -40.0
 margin_bottom = 40.0
 grow_horizontal = 0
@@ -142,146 +158,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LangContainer" type="HBoxContainer" parent="CommentsContainer"]
+[node name="LangChoice" type="OptionButton" parent="CommentsContainer"]
+margin_left = 371.0
 margin_right = 400.0
-margin_bottom = 20.0
-alignment = 2
+margin_bottom = 33.0
+size_flags_horizontal = 8
 
-[node name="EnglishButton" type="Button" parent="CommentsContainer/LangContainer"]
-margin_left = 340.0
-margin_right = 369.0
-margin_bottom = 20.0
-text = "EN"
-
-[node name="FrancaisButton" type="Button" parent="CommentsContainer/LangContainer"]
-margin_left = 373.0
+[node name="CommentsLabel" type="RichTextLabel" parent="CommentsContainer"]
+margin_top = 37.0
 margin_right = 400.0
-margin_bottom = 20.0
-text = "FR"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CommentsContainer"]
-margin_top = 24.0
-margin_right = 400.0
-margin_bottom = 524.0
-rect_min_size = Vector2( 0, 500 )
+margin_bottom = 577.0
+rect_min_size = Vector2( 0, 540 )
 focus_mode = 2
+theme = ExtResource( 4 )
 custom_fonts/italics_font = ExtResource( 3 )
 custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "azert [b]azert[/b] [i]azert[/i] Test Chinese characters - ç”² éª¨ æ–‡ ç«  è‰ æ–° éš¸ é«” æ›¸ -- Test Arabic characters - ïº€ ï»» Ù„Ù„Ù‡Ø§ Ù„Ù„Ù‡ ï»¼ ï·² Ú¯ ï­ªï­– -- Test [color=blue][b]blue[/b][/color] Hindi [color=#ffcc00]characters[/color]  - à¤… à¤† à¤‡ à¤ˆ à¤‰ à¤Š à¤‹ à¤Œ à¤ à¤Ž à¤ à¤  -- Test Russian characters - Ð˜ Ð· Ð¼ Ðµ Ð½ Ð¸ Ñ‚ ÑŒ Ð· Ð° Ð´ Ð° Ñ‡ Ð¸  -- Test Farsi characters - Ù…Ø§Ù…ÙˆØ±ÛŒØª Ù†Ú¯Ù‡Ø¯Ø§Ø±ÛŒ Ù†Ø±Ø® ØªØ¨Ø¯ÛŒÙ„ Ø§Ø±Ø² -- Test Hungarian characters - Üzenet szöveg -- Test Turkish characters - AçÄ±klama -- Test Spanish characters - Descripción -- Test English characters - 
-U+2000    En Quad                &#8192;      \" \"
-U+2001    Em Quad                &#8193;      \" \"
-U+2002    En Space               &#8194;      \" \"
-U+2003    Em Space               &#8195;      \" \"
-U+2004    Three-Per-Em Space     &#8196;      \" \"
-U+2005    Four-Per-Em Space      &#8197;      \" \"
-U+2006    Six-Per-Em Space       &#8198;      \" \"
-U+2007    Figure Space           &#8199;      \" \"
-U+2008    Punctuation Space      &#8200;      \" \"
-U+2009    Thin Space             &#8201;      \" \"
-U+200A    Hair Space             &#8202;      \" \"  <== :)
-U+200B    Zero-Width Space       &#8203;      \"​\"
-U+200C    Zero Width Non-Joiner  &#8204;      \"‌\"
-U+200D    Zero Width Joiner      &#8205;      \"‍\"
-U+200E    Left-To-Right Mark     &#8206;      \"‎\"
-U+200F    Right-To-Left Mark     &#8207;      \"‏\"
-U+202F    Narrow No-Break Space  &#8239;      \" \"
-
-Exemple covid-19
-
-[u]Estimations :[/u]
-Ordre de grandeur du taux de reproduction de base* (R0) : 2.7 
-(un malade contamine en moyenne 2.7 personnes si aucune restriction n'est appliquée, ni masque, ni confinement, ni fermetures, ni vaccin...)
-
-Ordre de grandeur de l'intervalle sériel** : 5.2 jours
-(durée moyenne entre apparition des symptômes du contamineur et apparition des symptômes du contaminé)
-
-[u]Courbe affichée :[/u]
-b : Taux de reproduction (Rt) : [color=#ffcc00]%.1f[/color]
-En extrême simplification à but explicatif, la courbe des contaminations a l'allure de y = [color=#ffcc00]%.1f^x[/color]
-
-x : [b]%d[/b] étapes de transmission ont eu lieu, soit [color=#ffcc00]%d[/color] jours
-
-y : [color=#ffcc00]%d nouvelles contaminations[/color] ont eu lieu
-
-[u]Retard :[/u]
-Les courbes officielles (nombre de décès, nombre de tests...) sont en retard d'environ x - 2, soit y = [color=#ffcc00]%d[/color] contaminations connues au lieu de [b]%d.[/b]
-
-À cause du temps d'incubation, il n'est pas possible de diagnostiquer immédiatement les contaminations. 
-Les courbes connues sont donc en retard, parfois de deux semaines. 
-De plus, des difficultés de cohérence, d'exhaustivité, de représentativité rendent ces courbes peu parlantes 
-(pénurie dépistages, difficulté comptage décès, chevauchement hospitalisations...). 
-Pour reconnaître l'allure y = b^x affichée ici, la courbe connue la moins sujette à incohérences 
-est peut-être celle des nouvelles admissions en réanimation.
-(rappel : y = b^x n'est qu'une approximation simplifiée à l'extrême)
-
-[u]Prédictions théoriques (approximation y = b^x) :[/u]
-Dans deux mois : x = [b]%d[/b] étapes de transmission, y = [color=#ffcc00]%d[/color] contaminations
-
-Durée restante avant d'atteindre y = 8 000 000 000 : [color=#ffcc00]%.1f mois[/color] (x = [b]%.1f[/b])
-
-Il suffit de 15,6 jours (x = [b]{x_end}[/b] - 3) pour passer de [color=#ffcc00]{y_x_minus_3}[/color] à 8 000 000 000 contaminés.
-
-
-[i]* (méta-moyenne sur trente-quatre publications internationales entre janvier et décembre 2020, 
-estimant de 0.3 à 8.9, souvent entre 2 et 5, pubmed.ncbi.nlm.nih.gov/33977156)
-** (méta-moyenne sur vingt-trois publications internationales, estimant de 4.2 à 7.5 jours, pubmed.ncbi.nlm.nih.gov/33706702)[/i]"
-text = "azert azert azert Test Chinese characters - ç”² éª¨ æ–‡ ç«  è‰ æ–° éš¸ é«” æ›¸ -- Test Arabic characters - ïº€ ï»» Ù„Ù„Ù‡Ø§ Ù„Ù„Ù‡ ï»¼ ï·² Ú¯ ï­ªï­– -- Test blue Hindi characters  - à¤… à¤† à¤‡ à¤ˆ à¤‰ à¤Š à¤‹ à¤Œ à¤ à¤Ž à¤ à¤  -- Test Russian characters - Ð˜ Ð· Ð¼ Ðµ Ð½ Ð¸ Ñ‚ ÑŒ Ð· Ð° Ð´ Ð° Ñ‡ Ð¸  -- Test Farsi characters - Ù…Ø§Ù…ÙˆØ±ÛŒØª Ù†Ú¯Ù‡Ø¯Ø§Ø±ÛŒ Ù†Ø±Ø® ØªØ¨Ø¯ÛŒÙ„ Ø§Ø±Ø² -- Test Hungarian characters - Üzenet szöveg -- Test Turkish characters - AçÄ±klama -- Test Spanish characters - Descripción -- Test English characters - 
-U+2000    En Quad                &#8192;      \" \"
-U+2001    Em Quad                &#8193;      \" \"
-U+2002    En Space               &#8194;      \" \"
-U+2003    Em Space               &#8195;      \" \"
-U+2004    Three-Per-Em Space     &#8196;      \" \"
-U+2005    Four-Per-Em Space      &#8197;      \" \"
-U+2006    Six-Per-Em Space       &#8198;      \" \"
-U+2007    Figure Space           &#8199;      \" \"
-U+2008    Punctuation Space      &#8200;      \" \"
-U+2009    Thin Space             &#8201;      \" \"
-U+200A    Hair Space             &#8202;      \" \"  <== :)
-U+200B    Zero-Width Space       &#8203;      \"​\"
-U+200C    Zero Width Non-Joiner  &#8204;      \"‌\"
-U+200D    Zero Width Joiner      &#8205;      \"‍\"
-U+200E    Left-To-Right Mark     &#8206;      \"‎\"
-U+200F    Right-To-Left Mark     &#8207;      \"‏\"
-U+202F    Narrow No-Break Space  &#8239;      \" \"
-
-Exemple covid-19
-
-Estimations :
-Ordre de grandeur du taux de reproduction de base* (R0) : 2.7 
-(un malade contamine en moyenne 2.7 personnes si aucune restriction n'est appliquée, ni masque, ni confinement, ni fermetures, ni vaccin...)
-
-Ordre de grandeur de l'intervalle sériel** : 5.2 jours
-(durée moyenne entre apparition des symptômes du contamineur et apparition des symptômes du contaminé)
-
-Courbe affichée :
-b : Taux de reproduction (Rt) : %.1f
-En extrême simplification à but explicatif, la courbe des contaminations a l'allure de y = %.1f^x
-
-x : %d étapes de transmission ont eu lieu, soit %d jours
-
-y : %d nouvelles contaminations ont eu lieu
-
-Retard :
-Les courbes officielles (nombre de décès, nombre de tests...) sont en retard d'environ x - 2, soit y = %d contaminations connues au lieu de %d.
-
-À cause du temps d'incubation, il n'est pas possible de diagnostiquer immédiatement les contaminations. 
-Les courbes connues sont donc en retard, parfois de deux semaines. 
-De plus, des difficultés de cohérence, d'exhaustivité, de représentativité rendent ces courbes peu parlantes 
-(pénurie dépistages, difficulté comptage décès, chevauchement hospitalisations...). 
-Pour reconnaître l'allure y = b^x affichée ici, la courbe connue la moins sujette à incohérences 
-est peut-être celle des nouvelles admissions en réanimation.
-(rappel : y = b^x n'est qu'une approximation simplifiée à l'extrême)
-
-Prédictions théoriques (approximation y = b^x) :
-Dans deux mois : x = %d étapes de transmission, y = %d contaminations
-
-Durée restante avant d'atteindre y = 8 000 000 000 : %.1f mois (x = %.1f)
-
-Il suffit de 15,6 jours (x = {x_end} - 3) pour passer de {y_x_minus_3} à 8 000 000 000 contaminés.
-
-
-* (méta-moyenne sur trente-quatre publications internationales entre janvier et décembre 2020, 
-estimant de 0.3 à 8.9, souvent entre 2 et 5, pubmed.ncbi.nlm.nih.gov/33977156)
-** (méta-moyenne sur vingt-trois publications internationales, estimant de 4.2 à 7.5 jours, pubmed.ncbi.nlm.nih.gov/33706702)"
 selection_enabled = true
