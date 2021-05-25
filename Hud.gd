@@ -20,40 +20,26 @@ func _ready():
 	($"/root/Models").connect("base_changed", self, "_on_update_y")
 # warning-ignore:return_value_discarded
 	($"/root/Models").connect("columns_count_changed", self, "_on_update_y")
-
-func humanizeIntString(digits) :
-	if digits.length() <= 3 :
-		return digits
-	else :
-		var next = digits.substr(0, digits.length() - 3)
-		var end = digits.substr(digits.length() - 3)
-		return humanizeIntString(next) + " " + end
-
-# digits = "k", with 0 < k < 1, eg. "0.020"
-func humanizeDecimals(digits) :
-	var L = digits.length()
-	if L == 3 : # "0.3"
-		return digits.substr(1) # ".3"
-	if digits.substr(L-1) != "0" : #"0.00007"
-		return digits.substr(1) #".00007"
-	var res = humanizeDecimals(digits.substr(0, L-1))
-	if res == ".0" : # digits = "0.000000" but number != 0
-		return ".000000..." # to show precision limit
-	return res
+	
+	var lc = $CommentsContainer/LangChoice
+	lc.connect("item_selected", $"/root/Models", "_on_locale_chosen", [], CONNECT_DEFERRED)
+	($"/root/Models").connect("comments_changed", self, "_on_comments_changed")
+	var langs = TranslationServer.get_loaded_locales()
+	var i = 0
+	var selecLang = 0
+	for lang in langs :
+		lc.add_item(lang, i)
+#		print("%s : %s" % [lang, i])
+		if(lang in TranslationServer.get_locale()) :
+			selecLang = i
+		i += 1
+#	print("=> %s : %s" % [TranslationServer.get_locale(), selecLang])
+	lc.select(selecLang)
+	lc.emit_signal("item_selected", selecLang)
 
 func _on_update_y():
 	var y = pow(Models.expBase, Models.columnsCount - 1)
-	var intY = floor(y)
-	var s = "%d" % intY
-	s = humanizeIntString(s)
-	if (intY != y) : #not integer, add decimals
-		var end = y - intY # .42
-		var endS
-		if intY <= 999 :
-			endS = "%f" % end # "0.4201"
-		else :
-			endS = "%.1f" % end # "0.4"
-		s = s + humanizeDecimals(endS)
+	var s = Models.humanizeFloat(y)
 	$CurrentYLabel.text = "y = " + s
 
 func _on_update_zoom_y(val):
@@ -61,6 +47,8 @@ func _on_update_zoom_y(val):
 	if (val >= .999 * zy.max_value) and (val < 1000000) : #1000000 : max camera limit
 		zy.max_value *= 2
 		#print(zy.max_value)
-	
-	
-	
+
+func _on_comments_changed():
+	$CommentsContainer/CommentsLabel.parse_bbcode(Models.comments)
+
+

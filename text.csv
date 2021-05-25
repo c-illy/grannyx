@@ -1,38 +1,37 @@
 keys,en,fr
-COMMENT_COVID,"blah blah","[u]Estimations :[/u]
+COMMENT_COVID,"blah blah","Exemple covid-19
+
+[u]Estimations :[/u]
 Ordre de grandeur du taux de reproduction de base* (R0) : 2.7 
-(un malade contamine en moyenne 2.7 personnes si aucune restriction n'est appliquée, ni masque, ni confinement, ni fermetures, ni vaccin...)
+(un malade contamine en moyenne 2.7 personnes si aucune restriction n'est appliquée, ni masque, ni confinement, ni fermetures, ni vaccin…)
 
 Ordre de grandeur de l'intervalle sériel** : 5.2 jours
 (durée moyenne entre apparition des symptômes du contamineur et apparition des symptômes du contaminé)
 
 [u]Courbe affichée :[/u]
-b : Taux de reproduction (Rt) : [color=#ffcc00]%.1f[/color]
-En extrême simplification à but explicatif, la courbe des contaminations a l'allure de y = [color=#ffcc00]%.1f^x[/color]
+b : Taux de reproduction (Rt) : [color=#ffcc00]{expBase}[/color]
+En extrême simplification à but explicatif, la courbe des contaminations a l'allure de y = [color=#ffcc00]{expBase}^x[/color]
+(quand x avance de 1, [i]nouveau y[/i] = [i]ancien y[/i] × {expBase}, donc les valeurs successives sont 1, {expBase}, {expBase} × {expBase}, {expBase} × {expBase} × {expBase}…)
 
-x : [b]%d[/b] étapes de transmission ont eu lieu, soit [color=#ffcc00]%d[/color] jours
+x : [b]{x}[/b] étapes de transmission ont eu lieu, soit [color=#ffcc00]{x_days}[/color] jours
 
-y : [color=#ffcc00]%d nouvelles contaminations[/color] ont eu lieu
-
-[u]Retard :[/u]
-Les courbes officielles (nombre de décès, nombre de tests...) sont en retard d'environ x - 2, soit y = [color=#ffcc00]%d[/color] contaminations connues au lieu de [b]%d.[/b]
-
-À cause du temps d'incubation, il n'est pas possible de diagnostiquer immédiatement les contaminations. 
-Les courbes connues sont donc en retard, parfois de deux semaines. 
-De plus, des difficultés de cohérence, d'exhaustivité, de représentativité rendent ces courbes peu parlantes 
-(pénurie dépistages, difficulté comptage décès, chevauchement hospitalisations...). 
-Pour reconnaître l'allure y = b^x affichée ici, la courbe connue la moins sujette à incohérences 
-est peut-être celle des nouvelles admissions en réanimation.
-(rappel : y = b^x n'est qu'une approximation simplifiée à l'extrême)
+y : [color=#ffcc00]{y} nouvelles contaminations[/color] ont eu lieu
 
 [u]Prédictions théoriques (approximation y = b^x) :[/u]
-Dans deux mois : x = [b]%d[/b] étapes de transmission, y = [color=#ffcc00]%d[/color] contaminations
+Dans deux mois : x = [b]{x_two_months}[/b] étapes de transmission, y = [color=#ffcc00]{y_two_months}[/color] contaminations
 
-Durée restante avant d'atteindre y = 8 000 000 000 : [color=#ffcc00]%.1f mois[/color] (x = [b]%.1f[/b])
+Durée restante avant d'atteindre y = 8 000 000 000 : [color=#ffcc00]{months_before_end} mois[/color] (x = [b]{x_end}[/b])
 
-Il suffit de 15,6 jours (x = [b]{x_end}[/b] - 3) pour passer de [color=#ffcc00]{y_x_minus_3}[/color] à 8 000 000 000 contaminés.
+Lorsque [color=#ffcc00]{y_xend_minus_3}[/color] contaminations viennent d'avoir lieu, il reste 15,6 jours (x = [b]{x_end}[/b] - 3) avant d'atteindre 8 000 000 000.
+
+[u]Retard :[/u]
+Les courbes officielles (nombre de décès, nombre de tests…) sont en retard d'environ x - 2, soit y = [color=#ffcc00]{y_known}[/color] contaminations connues au lieu de [b]{y}.[/b]
+
+À cause du temps d'incubation, il n'est pas possible de diagnostiquer immédiatement les contaminations. Les courbes connues sont donc en retard, parfois de deux semaines. De plus, des difficultés de cohérence, d'exhaustivité, de représentativité rendent ces courbes peu parlantes (pénurie dépistages, difficulté comptage décès, chevauchement hospitalisations…). 
+Pour reconnaître l'allure y = b^x affichée ici, la courbe connue la moins sujette à incohérences est peut-être celle des nouvelles admissions en réanimation.
+(rappel : y = b^x n'est qu'une approximation simplifiée à l'extrême)
 
 
 [i]* (méta-moyenne sur trente-quatre publications internationales entre janvier et décembre 2020, 
 estimant de 0.3 à 8.9, souvent entre 2 et 5, pubmed.ncbi.nlm.nih.gov/33977156)
-** (méta-moyenne sur vingt-trois publications internationales, estimant de 4.2 à 7.5 jours, pubmed.ncbi.nlm.nih.gov/33706702)"[/i]
+** (méta-moyenne sur vingt-trois publications internationales, estimant de 4.2 à 7.5 jours, pubmed.ncbi.nlm.nih.gov/33706702)[/i]"
