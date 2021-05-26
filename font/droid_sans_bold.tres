@@ -3,4 +3,6 @@
 [ext_resource path="res://font/DroidSans-Bold.ttf" type="DynamicFontData" id=1]
 
 [resource]
+size = 15
+use_filter = true
 font_data = ExtResource( 1 )

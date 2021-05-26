@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Hud.gd" type="Script" id=1]
 [ext_resource path="res://font/droid_sans_bold.tres" type="DynamicFont" id=2]
@@ -6,24 +6,32 @@
 [ext_resource path="res://theme.tres" type="Theme" id=4]
 [ext_resource path="res://font/DroidSans.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Tuto.tscn" type="PackedScene" id=6]
+[ext_resource path="res://font/DroidSerif-Italic.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 15
+size = 13
+use_filter = true
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
 resource_local_to_scene = true
-size = 26
+size = 22
 use_filter = true
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 14
+size = 13
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 15
 use_filter = true
 font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 13
+use_filter = true
+font_data = ExtResource( 7 )
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -38,19 +46,19 @@ __meta__ = {
 }
 
 [node name="FormulaContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_right = 244.0
-margin_bottom = 27.0
+margin_right = 233.0
+margin_bottom = 22.0
 
 [node name="FormulaLabel" type="Label" parent="CurveOptionsContainer/FormulaContainer"]
-margin_right = 48.0
-margin_bottom = 27.0
+margin_right = 40.0
+margin_bottom = 22.0
 text = "y = b"
 
 [node name="ExponentFormulaLabel" type="Label" parent="CurveOptionsContainer/FormulaContainer/FormulaLabel"]
-margin_left = 45.1136
-margin_top = -8.21368
-margin_right = 85.1136
-margin_bottom = 10.7863
+margin_left = 38.416
+margin_top = -8.214
+margin_right = 78.416
+margin_bottom = 10.786
 custom_fonts/font = SubResource( 1 )
 text = "x"
 __meta__ = {
@@ -59,36 +67,36 @@ __meta__ = {
 }
 
 [node name="ParamsContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_top = 31.0
-margin_right = 244.0
-margin_bottom = 68.0
+margin_top = 26.0
+margin_right = 233.0
+margin_bottom = 58.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ParamsContainer"]
 margin_top = 5.0
-margin_right = 13.0
-margin_bottom = 32.0
+margin_right = 11.0
+margin_bottom = 27.0
 text = "b"
 
 [node name="InputBase" type="SpinBox" parent="CurveOptionsContainer/ParamsContainer"]
-margin_left = 17.0
-margin_right = 115.0
-margin_bottom = 37.0
+margin_left = 15.0
+margin_right = 101.0
+margin_bottom = 32.0
 min_value = 1.1
 max_value = 12.0
 step = 0.1
 value = 2.7
 
 [node name="Label2" type="Label" parent="CurveOptionsContainer/ParamsContainer"]
-margin_left = 119.0
+margin_left = 105.0
 margin_top = 5.0
-margin_right = 142.0
-margin_bottom = 32.0
+margin_right = 124.0
+margin_bottom = 27.0
 text = "  x"
 
 [node name="InputX" type="SpinBox" parent="CurveOptionsContainer/ParamsContainer"]
-margin_left = 146.0
-margin_right = 244.0
-margin_bottom = 37.0
+margin_left = 128.0
+margin_right = 214.0
+margin_bottom = 32.0
 max_value = 80.0
 rounded = true
 
@@ -97,19 +105,19 @@ position = Vector2( 96.9716, 12.1333 )
 z_index = -1
 
 [node name="ZoomYContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_top = 72.0
-margin_right = 244.0
-margin_bottom = 172.0
+margin_top = 62.0
+margin_right = 233.0
+margin_bottom = 162.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ZoomYContainer"]
-margin_top = 36.0
-margin_right = 73.0
-margin_bottom = 63.0
+margin_top = 39.0
+margin_right = 58.0
+margin_bottom = 61.0
 text = "zoom y"
 
 [node name="ZoomYSlider" type="VSlider" parent="CurveOptionsContainer/ZoomYContainer"]
-margin_left = 77.0
-margin_right = 93.0
+margin_left = 62.0
+margin_right = 78.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 1
@@ -120,19 +128,19 @@ value = 0.3
 exp_edit = true
 
 [node name="ZoomXContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_top = 176.0
-margin_right = 244.0
-margin_bottom = 203.0
+margin_top = 166.0
+margin_right = 233.0
+margin_bottom = 188.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ZoomXContainer"]
-margin_right = 73.0
-margin_bottom = 27.0
+margin_right = 58.0
+margin_bottom = 22.0
 text = "zoom x"
 
 [node name="ZoomXSlider" type="HSlider" parent="CurveOptionsContainer/ZoomXContainer"]
-margin_left = 77.0
-margin_right = 177.0
-margin_bottom = 27.0
+margin_left = 62.0
+margin_right = 162.0
+margin_bottom = 22.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 1
 min_value = 0.4
@@ -167,19 +175,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LangChoice" type="OptionButton" parent="CommentsContainer"]
-margin_left = 371.0
+[node name="CommentsButtonsContainer" type="HBoxContainer" parent="CommentsContainer"]
 margin_right = 400.0
-margin_bottom = 33.0
-size_flags_horizontal = 8
+margin_bottom = 28.0
+alignment = 2
 
-[node name="SeeCommentsButton" type="Button" parent="CommentsContainer"]
-margin_left = 288.0
-margin_top = 37.0
-margin_right = 400.0
-margin_bottom = 60.0
+[node name="SeeCommentsButton" type="Button" parent="CommentsContainer/CommentsButtonsContainer"]
+margin_left = 246.0
+margin_right = 354.0
+margin_bottom = 28.0
 size_flags_horizontal = 8
 custom_fonts/font = SubResource( 4 )
+toggle_mode = true
 shortcut_in_tooltip = false
 action_mode = 0
 text = "SEE_COMMENTS"
@@ -187,6 +194,19 @@ align = 0
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Control" type="Control" parent="CommentsContainer/CommentsButtonsContainer"]
+margin_left = 358.0
+margin_right = 367.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 9, 0 )
+size_flags_stretch_ratio = 0.0
+
+[node name="LangChoice" type="OptionButton" parent="CommentsContainer/CommentsButtonsContainer"]
+margin_left = 371.0
+margin_right = 400.0
+margin_bottom = 28.0
+size_flags_horizontal = 8
 
 [node name="CommentsLabel" type="RichTextLabel" parent="CommentsContainer"]
 visible = false
@@ -201,4 +221,18 @@ custom_fonts/bold_font = ExtResource( 2 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 selection_enabled = true
-[connection signal="pressed" from="CommentsContainer/SeeCommentsButton" to="." method="_on_see_comments"]
+
+[node name="LinksLabel" type="RichTextLabel" parent="CommentsContainer"]
+visible = false
+margin_top = 64.0
+margin_right = 400.0
+margin_bottom = 85.0
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "LINKS"
+text = "LINKS"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+[connection signal="pressed" from="CommentsContainer/CommentsButtonsContainer/SeeCommentsButton" to="." method="_on_see_comments"]

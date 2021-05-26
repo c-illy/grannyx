@@ -23,7 +23,7 @@ func _ready():
 # warning-ignore:return_value_discarded
 	($"/root/Models").connect("columns_count_changed", self, "_on_update_y")
 	
-	var lc = $CommentsContainer/LangChoice
+	var lc = $CommentsContainer/CommentsButtonsContainer/LangChoice
 	lc.connect("item_selected", $"/root/Models", "_on_locale_chosen", [], CONNECT_DEFERRED)
 	($"/root/Models").connect("comments_changed", self, "_on_comments_changed")
 	var langs = TranslationServer.get_loaded_locales()
@@ -55,9 +55,10 @@ func _on_update_zoom_y(val):
 
 func _on_comments_changed():
 	$CommentsContainer/CommentsLabel.parse_bbcode(Models.comments)
+	$CommentsContainer/LinksLabel.parse_bbcode(tr("LINKS"))
 
 func _on_see_comments():
-	$CommentsContainer.remove_child($CommentsContainer/SeeCommentsButton)
-	$CommentsContainer/CommentsLabel.visible = true
+	$CommentsContainer/CommentsLabel.visible = !$CommentsContainer/CommentsLabel.visible
+	$CommentsContainer/LinksLabel.visible = !$CommentsContainer/LinksLabel.visible
 
 
