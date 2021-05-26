@@ -23,8 +23,18 @@ func _ready():
 # warning-ignore:return_value_discarded
 	($"/root/Models").connect("columns_count_changed", self, "_on_update_y")
 	
+	var cl = $CommentsContainer/CommentsLabel
+	cl.rect_min_size.y = OS.window_size.y - 120
+# warning-ignore:return_value_discarded
+	get_tree().get_root().connect("size_changed", self, "_on_window_resize", [], CONNECT_DEFERRED)
+	
+	#https://godotengine.org/qa/46978/how-do-i-open-richtextlabel-bbcode-links-in-an-html5-export
+	var ll = $CommentsContainer/LinksLabel
+	ll.connect("meta_clicked", self, "_on_LinksLabel_meta_clicked", [], CONNECT_DEFERRED)
+	
 	var lc = $CommentsContainer/CommentsButtonsContainer/LangChoice
 	lc.connect("item_selected", $"/root/Models", "_on_locale_chosen", [], CONNECT_DEFERRED)
+# warning-ignore:return_value_discarded
 	($"/root/Models").connect("comments_changed", self, "_on_comments_changed")
 	var langs = TranslationServer.get_loaded_locales()
 	var i = 0
@@ -61,4 +71,14 @@ func _on_see_comments():
 	$CommentsContainer/CommentsLabel.visible = !$CommentsContainer/CommentsLabel.visible
 	$CommentsContainer/LinksLabel.visible = !$CommentsContainer/LinksLabel.visible
 
+#https://godotengine.org/qa/46978/how-do-i-open-richtextlabel-bbcode-links-in-an-html5-export
+func _on_LinksLabel_meta_clicked(meta):
+	#OS.shell_open(meta) #blocked by firefox
+#	var jsCode = "window.open(\"%s\", '_blank');" % meta #blocked by firefox
+	var jsCode = "window.open(\"%s\",'_self');" % meta
+	#print(jsCode)
+	JavaScript.eval(jsCode);
+
+func _on_window_resize():
+	$CommentsContainer/CommentsLabel.rect_min_size.y = OS.window_size.y - 120
 

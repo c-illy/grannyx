@@ -7,7 +7,7 @@
 [node name="Main" type="Node"]
 
 [node name="Curve" parent="." instance=ExtResource( 2 )]
-position = Vector2( 16, 640 )
+position = Vector2( 16, 0 )
 
 [node name="Hud" parent="." instance=ExtResource( 1 )]
 
