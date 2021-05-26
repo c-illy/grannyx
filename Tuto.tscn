@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Edge.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tuto.gd" type="Script" id=2]
+
+[node name="Tuto" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Arrow" parent="." instance=ExtResource( 1 )]
+position = Vector2( 69.8953, -1.1384 )
+rotation = -3.205
+scale = Vector2( 5, 5 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
