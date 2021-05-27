@@ -41,7 +41,7 @@ func _process(delta):
 	
 	#then continue filling by y-scaling up last unit
 	if tmpUnitsCount < unitsCount :
-		var fillRatioSpeed = 1.7 # ratio of whole column to fill in one second
+		var fillRatioSpeed = 1.5 # ratio of whole column to fill in one second
 		var deltaRatio = fillRatioSpeed * delta #tmpMultiDelta
 		var deltaU = deltaRatio * unitsCount
 		#now forget about ratios

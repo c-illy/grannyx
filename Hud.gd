@@ -35,7 +35,7 @@ func _ready():
 	var lc = $CommentsContainer/CommentsButtonsContainer/LangChoice
 	lc.connect("item_selected", $"/root/Models", "_on_locale_chosen", [], CONNECT_DEFERRED)
 # warning-ignore:return_value_discarded
-	($"/root/Models").connect("comments_changed", self, "_on_comments_changed")
+	($"/root/Models").connect("comments_changed", self, "_on_comments_changed", [], CONNECT_DEFERRED)
 	var langs = TranslationServer.get_loaded_locales()
 	var i = 0
 	var selecLang = 0
@@ -54,8 +54,8 @@ func _on_update_y():
 	var s = Models.humanizeFloat(y)
 	$CurrentYLabel.text = "y = " + s
 	if tutoON :
-		$CurveOptionsContainer/ParamsContainer/InputX.remove_child(
-			$CurveOptionsContainer/ParamsContainer/InputX/Tuto)
+		$CurveOptionsContainer/ParamsContainer/InputX/Tuto.queue_free()
+		tutoON = false
 
 func _on_update_zoom_y(val):
 	var zy = $"CurveOptionsContainer/ZoomYContainer/ZoomYSlider"

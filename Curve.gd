@@ -22,14 +22,14 @@ func _process(_delta):
 		add_child(c)
 		tmpColumnsCount += 1
 	while tmpColumnsCount > Models.columnsCount :
-		remove_child(get_child(get_child_count() - 1))
+		(get_child(tmpColumnsCount - 1)).queue_free()
 		tmpColumnsCount -= 1
 	set_process(false)
 
 func _on_base_changed() :
 	var i = get_child_count() - 1
 	while i > 0 :
-		remove_child(get_child(i))
+		(get_child(i)).queue_free()
 		i -= 1
 	tmpColumnsCount = 1
 	set_process(true)

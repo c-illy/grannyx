@@ -10,16 +10,27 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
 config/name="grannyx"
+config/description="Exponential explained to Granny"
 run/main_scene="res://Main.tscn"
-run/frame_delay_msec=3
+run/frame_delay_msec=40
 run/low_processor_mode=true
+run/low_processor_mode_sleep_usec=40000
+boot_splash/image="res://splash.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0.105882, 0.105882, 0.235294, 1 )
 config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout=""
+driver=""
+channel_disable_threshold_db=0.0
+channel_disable_time=0.01
 
 [autoload]
 
@@ -28,11 +39,13 @@ Models="*res://Models.tscn"
 [debug]
 
 settings/fps/force_fps=8
+gdscript/warnings/return_value_discarded=false
 
 [display]
 
 window/size/width=950
 window/size/height=650
+window/vsync/use_vsync=false
 window/energy_saving/keep_screen_on=false
 window/ios/hide_home_indicator=false
 
@@ -57,6 +70,7 @@ common/enable_object_picking=false
 
 quality/driver/driver_name="GLES2"
 quality/intended_usage/framebuffer_allocation=1
+threads/thread_model=2
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 quality/shadows/filter_mode=0

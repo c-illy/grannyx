@@ -19,11 +19,11 @@ size = 22
 use_filter = true
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 13
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 15
 use_filter = true
 font_data = ExtResource( 5 )
@@ -185,7 +185,7 @@ margin_left = 246.0
 margin_right = 354.0
 margin_bottom = 28.0
 size_flags_horizontal = 8
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 toggle_mode = true
 shortcut_in_tooltip = false
 action_mode = 0
@@ -218,7 +218,7 @@ focus_mode = 2
 theme = ExtResource( 4 )
 custom_fonts/italics_font = ExtResource( 3 )
 custom_fonts/bold_font = ExtResource( 2 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 selection_enabled = true
 

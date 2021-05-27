@@ -3,7 +3,40 @@ SEE_COMMENTS,"See comments","Voir commentaires"
 LINKS,"[right]Open source (GPL-3.0)  -  Improve grannyx on [url=https://github.com/c-illy/grannyx]github.com[/url]
 Support developper by [url=http://acreplume.com/en/paiement.html]making a donation[/url][/right]","[right]Open source (GPL-3.0)  -  Améliorer grannyx sur [url=https://github.com/c-illy/grannyx]github.com[/url]
 Soutenir le développeur [url=http://acreplume.com/fr/paiement.html]par une donation[/url][/right]"
-COMMENT_COVID,"blah blah","Exemple covid-19
+COMMENT_COVID,"Covid-19 example
+
+[u]Estimates :[/u]
+Order of magnitude of basic reproduction number (R0) : 2.7 
+(a patient contaminates an average of 2.7 people if no restriction is applied, no mask, no lockdown, no closures, no vaccine…)
+
+Order of magnitude of serial interval** : 5.2 days
+(average time between onset of symptoms of the contaminant and onset of symptoms of the contaminated)
+
+[u]Displayed curve :[/u]
+b : Reproduction number (Rt) : [color=#ffcc00]{expBase}[/color]
+In extreme simplification for explanatory purpose, the curve of the contaminations follow the pace of y = [color=#ffcc00]{expBase}^x[/color]
+(when x moves forward by 1, [i]new y[/i] = [i]old y[/i] × {expBase}, hence successive values are 1, {expBase}, {expBase} × {expBase}, {expBase} × {expBase} × {expBase}…)
+
+x : [b]{x}[/b] transmission steps occurred, or [color=#ffcc00]{x_days}[/color] days
+
+y : [color=#ffcc00]{y} new contaminations[/color] occurred
+
+[u]Theoretical predictions (approximation y = b^x) :[/u]
+In two months : x = [b]{x_two_months}[/b] transmission steps, y = [color=#ffcc00]{y_two_months}[/color] contaminations
+
+Remaining time to reach y = 8 000 000 000 : [color=#ffcc00]{months_before_end} months[/color] (x = [b]{x_end}[/b])
+
+When [color=#ffcc00]{y_xend_minus_3}[/color] contaminations just occurred, 15,6 days are left (x = [b]{x_end}[/b] - 3) before reaching 8 000 000 000.
+
+[u]Delay :[/u]
+The official curves (number of deaths, number of tests…) are about x - 2 late, or y = [color=#ffcc00]{y_known}[/color] known contaminations instead of [b]{y}.[/b]
+
+Because of the incubation time, it is not possible to immediately diagnose contamination. The known curves are therefore late, sometimes two weeks. In addition, difficulties of coherence, completeness and representativeness decrease their relevance (shortage of screenings, difficulty counting deaths, overlapping hospitalizations…). To recognize the pace y = b^x displayed here, the least inconsistent known curve may be that of new resuscitation admissions.
+(reminder : y = b^x is only a simplified to the extreme approximation)
+
+
+[i]* (meta-average of 34 international publications between January and December 2020, estimating from 0.3 to 8.9, often between 2 and 5, pubmed.ncbi.nlm.nih.gov/33977156)
+** (meta-average of 23 international publications, estimating from 4.2 to 7.5 days, pubmed.ncbi.nlm.nih.gov/33706702)[/i]","Exemple covid-19
 
 [u]Estimations :[/u]
 Ordre de grandeur du taux de reproduction de base* (R0) : 2.7 
@@ -31,11 +64,9 @@ Lorsque [color=#ffcc00]{y_xend_minus_3}[/color] contaminations viennent d'avoir 
 [u]Retard :[/u]
 Les courbes officielles (nombre de décès, nombre de tests…) sont en retard d'environ x - 2, soit y = [color=#ffcc00]{y_known}[/color] contaminations connues au lieu de [b]{y}.[/b]
 
-À cause du temps d'incubation, il n'est pas possible de diagnostiquer immédiatement les contaminations. Les courbes connues sont donc en retard, parfois de deux semaines. De plus, des difficultés de cohérence, d'exhaustivité, de représentativité rendent ces courbes peu parlantes (pénurie dépistages, difficulté comptage décès, chevauchement hospitalisations…). 
-Pour reconnaître l'allure y = b^x affichée ici, la courbe connue la moins sujette à incohérences est peut-être celle des nouvelles admissions en réanimation.
+À cause du temps d'incubation, il n'est pas possible de diagnostiquer immédiatement les contaminations. Les courbes connues sont donc en retard, parfois de deux semaines. De plus, des difficultés de cohérence, d'exhaustivité, de représentativité rendent ces courbes peu parlantes (pénurie dépistages, difficulté comptage décès, chevauchement hospitalisations…). Pour reconnaître l'allure y = b^x affichée ici, la courbe connue la moins sujette à incohérences est peut-être celle des nouvelles admissions en réanimation.
 (rappel : y = b^x n'est qu'une approximation simplifiée à l'extrême)
 
 
-[i]* (méta-moyenne sur trente-quatre publications internationales entre janvier et décembre 2020, 
-estimant de 0.3 à 8.9, souvent entre 2 et 5, pubmed.ncbi.nlm.nih.gov/33977156)
+[i]* (méta-moyenne sur trente-quatre publications internationales entre janvier et décembre 2020, estimant de 0.3 à 8.9, souvent entre 2 et 5, pubmed.ncbi.nlm.nih.gov/33977156)
 ** (méta-moyenne sur vingt-trois publications internationales, estimant de 4.2 à 7.5 jours, pubmed.ncbi.nlm.nih.gov/33706702)[/i]"

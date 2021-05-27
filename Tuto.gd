@@ -15,7 +15,7 @@ func _on_timeout() :
 		nbFlashes -= 1
 	else :
 		$Arrow.visible = true
-		remove_child($Timer)
+		$Timer.queue_free()
 
 func _on_remove() :
-		get_parent().remove_child(self)
+		queue_free()
