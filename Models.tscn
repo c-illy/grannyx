@@ -2,5 +2,5 @@
 
 [ext_resource path="res://Models.gd" type="Script" id=1]
 
-[node name="Globals" type="Node"]
+[node name="Models" type="Node"]
 script = ExtResource( 1 )

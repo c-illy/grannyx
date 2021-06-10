@@ -1,8 +1,6 @@
 # Hud
 extends CanvasLayer
 
-var tutoON = true
-
 func _ready():
 	var b = $"CurveOptionsContainer/ParamsContainer/InputBase"
 	b.connect("value_changed", $"/root/Models", "_on_base_changed")
@@ -53,9 +51,6 @@ func _on_update_y():
 	var y = pow(Models.expBase, Models.columnsCount - 1)
 	var s = Models.humanizeFloat(y)
 	$CurrentYLabel.text = "y = " + s
-	if tutoON :
-		$CurveOptionsContainer/ParamsContainer/InputX/Tuto.queue_free()
-		tutoON = false
 
 func _on_update_zoom_y(val):
 	var zy = $"CurveOptionsContainer/ZoomYContainer/ZoomYSlider"
