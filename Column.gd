@@ -7,7 +7,7 @@ export (PackedScene) var EdgesColumn
 export var unitsCount = 1
 
 var tmpUnitsCount = 0
-var h = 1
+#var h = 1 #use Models.unitHeight instead
 
 #var tmpMultiDelta = 0
 
@@ -28,8 +28,8 @@ func _process(delta):
 	while (tmpUnitsCount <= 90) and (tmpUnitsCount < unitsCount) :
 		var u = UnitSprite.instance()
 		add_child(u)
-		h = u.scale.y
-		u.position.y = - h * tmpUnitsCount * 3
+		Models.unitHeight = u.scale.y
+		u.position.y = - Models.unitHeight * tmpUnitsCount * 3
 		u.texture.width = Models.unitWidth;
 		tmpUnitsCount += 1
 	
@@ -51,14 +51,14 @@ func _process(delta):
 		var iLast = get_child_count() - 1
 		var u = get_child(iLast) # last unit
 		#h = get_child(0).scale.y
-		u.scale.y = h * (tmpUnitsCount - iLast) * 3
-		u.position.y = - h * (tmpUnitsCount-1) * 3
+		u.scale.y = Models.unitHeight * (tmpUnitsCount - iLast) * 3
+		u.position.y = - Models.unitHeight * (tmpUnitsCount-1) * 3
 	else : #end, add edges and unregister _process() method
 		var x = get_index()
 		if (0 < x) && (x < 3):
 			var e = EdgesColumn.instance()
 			e.edgesCount = unitsCount
-			e.unitHeight = h
+			e.unitHeight = Models.unitHeight
 			add_child(e)
 			e.position.x = -Models.unitWidth
 		set_process(false) #unsignificant impact but good practice when possible

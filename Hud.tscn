@@ -1,34 +1,153 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Hud.gd" type="Script" id=1]
-[ext_resource path="res://font/droid_sans_bold.tres" type="DynamicFont" id=2]
-[ext_resource path="res://font/droid_serif_italic.tres" type="DynamicFont" id=3]
+[ext_resource path="res://font/DroidSans-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://font/DroidSansFallback.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://theme.tres" type="Theme" id=4]
 [ext_resource path="res://font/DroidSans.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Tuto.tscn" type="PackedScene" id=6]
 [ext_resource path="res://font/DroidSerif-Italic.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://theme_styleboxflat.tres" type="StyleBox" id=8]
+[ext_resource path="res://font/droid_sans.tres" type="DynamicFont" id=9]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=10]
+size = 18
+use_filter = true
+font_data = ExtResource( 5 )
+fallback/0 = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=11]
 size = 13
 use_filter = true
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 8.0
+content_margin_right = 5.0
+content_margin_top = 4.0
+content_margin_bottom = 5.0
+bg_color = Color( 0, 0, 0, 0.345098 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="DynamicFont" id=12]
+use_filter = true
+font_data = ExtResource( 5 )
+fallback/0 = ExtResource( 3 )
+
+[sub_resource type="Theme" id=13]
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = SubResource( 1 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 1, 0.603922, 0.388235, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = SubResource( 12 )
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = null
+LineEdit/styles/read_only = null
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = ExtResource( 8 )
+SpinBox/icons/updown = null
+
+[sub_resource type="Theme" id=2]
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = ExtResource( 8 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.901961, 0.541176, 1, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = ExtResource( 9 )
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = null
+LineEdit/styles/read_only = null
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = ExtResource( 8 )
+SpinBox/icons/updown = null
+
+[sub_resource type="DynamicFont" id=3]
 resource_local_to_scene = true
 size = 22
 use_filter = true
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 13
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 15
+[sub_resource type="DynamicFont" id=7]
+size = 13
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 14
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 14
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 13
 use_filter = true
 font_data = ExtResource( 7 )
@@ -37,29 +156,38 @@ font_data = ExtResource( 7 )
 script = ExtResource( 1 )
 
 [node name="CurveOptionsContainer" type="VBoxContainer" parent="."]
-margin_left = 20.37
-margin_top = 38.9296
-margin_right = 253.37
-margin_bottom = 225.93
+margin_left = 20.0
+margin_top = 39.0
+margin_right = 253.0
+margin_bottom = 227.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FormulaContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
+[node name="FormulaLabel" type="RichTextLabel" parent="CurveOptionsContainer"]
 margin_right = 233.0
-margin_bottom = 22.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 32 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_stretch_ratio = 0.0
+custom_fonts/normal_font = SubResource( 10 )
+bbcode_enabled = true
+bbcode_text = "  [color=#80ffa6]y[/color] = [color=#ff9a63]b[/color]"
+text = "  y = b"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
-[node name="FormulaLabel" type="Label" parent="CurveOptionsContainer/FormulaContainer"]
-margin_right = 40.0
-margin_bottom = 22.0
-text = "y = b"
-
-[node name="ExponentFormulaLabel" type="Label" parent="CurveOptionsContainer/FormulaContainer/FormulaLabel"]
-margin_left = 38.416
-margin_top = -8.214
-margin_right = 78.416
-margin_bottom = 10.786
-custom_fonts/font = SubResource( 1 )
+[node name="ExponentFormulaLabel" type="Label" parent="CurveOptionsContainer/FormulaLabel"]
+margin_left = 48.0
+margin_top = -7.0
+margin_right = 88.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.901961, 0.541176, 1, 1 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -67,57 +195,60 @@ __meta__ = {
 }
 
 [node name="ParamsContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_top = 26.0
+margin_top = 36.0
 margin_right = 233.0
-margin_bottom = 58.0
+margin_bottom = 65.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ParamsContainer"]
 margin_top = 5.0
-margin_right = 11.0
-margin_bottom = 27.0
+margin_right = 9.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 1, 0.603922, 0.388235, 1 )
 text = "b"
 
 [node name="InputBase" type="SpinBox" parent="CurveOptionsContainer/ParamsContainer"]
-margin_left = 15.0
-margin_right = 101.0
-margin_bottom = 32.0
+margin_left = 13.0
+margin_right = 87.0
+margin_bottom = 29.0
+theme = SubResource( 13 )
 min_value = 1.1
 max_value = 12.0
 step = 0.1
 value = 2.7
 
 [node name="Label2" type="Label" parent="CurveOptionsContainer/ParamsContainer"]
-margin_left = 105.0
+margin_left = 91.0
 margin_top = 5.0
-margin_right = 124.0
-margin_bottom = 27.0
+margin_right = 107.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.901961, 0.541176, 1, 1 )
 text = "  x"
 
 [node name="InputX" type="SpinBox" parent="CurveOptionsContainer/ParamsContainer"]
-margin_left = 128.0
-margin_right = 214.0
-margin_bottom = 32.0
+margin_left = 111.0
+margin_right = 185.0
+margin_bottom = 29.0
+theme = SubResource( 2 )
 max_value = 80.0
 rounded = true
 
-[node name="Tuto" parent="CurveOptionsContainer/ParamsContainer/InputX" instance=ExtResource( 6 )]
-position = Vector2( 96.9716, 12.1333 )
-z_index = -1
-
 [node name="ZoomYContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_top = 62.0
+margin_top = 69.0
 margin_right = 233.0
-margin_bottom = 162.0
+margin_bottom = 169.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ZoomYContainer"]
-margin_top = 39.0
-margin_right = 58.0
-margin_bottom = 61.0
+margin_top = 41.0
+margin_right = 46.0
+margin_bottom = 58.0
+custom_colors/font_color = Color( 0.639216, 0.639216, 0.639216, 1 )
 text = "zoom y"
 
 [node name="ZoomYSlider" type="VSlider" parent="CurveOptionsContainer/ZoomYContainer"]
-margin_left = 62.0
-margin_right = 78.0
+margin_left = 50.0
+margin_right = 66.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 1
@@ -128,19 +259,20 @@ value = 0.3
 exp_edit = true
 
 [node name="ZoomXContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
-margin_top = 166.0
+margin_top = 173.0
 margin_right = 233.0
-margin_bottom = 188.0
+margin_bottom = 190.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ZoomXContainer"]
-margin_right = 58.0
-margin_bottom = 22.0
+margin_right = 46.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 0.639216, 0.639216, 0.639216, 1 )
 text = "zoom x"
 
 [node name="ZoomXSlider" type="HSlider" parent="CurveOptionsContainer/ZoomXContainer"]
-margin_left = 62.0
-margin_right = 162.0
-margin_bottom = 22.0
+margin_left = 50.0
+margin_right = 150.0
+margin_bottom = 17.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 1
 min_value = 0.4
@@ -156,7 +288,8 @@ margin_top = 5.0
 margin_right = 20.0
 margin_bottom = 14.0
 theme = ExtResource( 4 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.501961, 1, 0.65098, 1 )
 text = "y = 1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -167,7 +300,8 @@ anchor_left = 0.958
 anchor_top = 0.04
 anchor_right = 0.99
 anchor_bottom = 0.047
-margin_left = -40.0
+margin_left = -370.1
+margin_right = -0.5
 margin_bottom = 40.0
 grow_horizontal = 0
 rect_min_size = Vector2( 400, 0 )
@@ -177,15 +311,15 @@ __meta__ = {
 
 [node name="CommentsButtonsContainer" type="HBoxContainer" parent="CommentsContainer"]
 margin_right = 400.0
-margin_bottom = 28.0
+margin_bottom = 23.0
 alignment = 2
 
 [node name="SeeCommentsButton" type="Button" parent="CommentsContainer/CommentsButtonsContainer"]
 margin_left = 246.0
 margin_right = 354.0
-margin_bottom = 28.0
+margin_bottom = 23.0
 size_flags_horizontal = 8
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 toggle_mode = true
 shortcut_in_tooltip = false
 action_mode = 0
@@ -198,27 +332,27 @@ __meta__ = {
 [node name="Control" type="Control" parent="CommentsContainer/CommentsButtonsContainer"]
 margin_left = 358.0
 margin_right = 367.0
-margin_bottom = 28.0
+margin_bottom = 23.0
 rect_min_size = Vector2( 9, 0 )
 size_flags_stretch_ratio = 0.0
 
 [node name="LangChoice" type="OptionButton" parent="CommentsContainer/CommentsButtonsContainer"]
 margin_left = 371.0
 margin_right = 400.0
-margin_bottom = 28.0
+margin_bottom = 23.0
 size_flags_horizontal = 8
 
 [node name="CommentsLabel" type="RichTextLabel" parent="CommentsContainer"]
 visible = false
-margin_top = 74.0
+margin_top = 27.0
 margin_right = 400.0
-margin_bottom = 614.0
+margin_bottom = 567.0
 rect_min_size = Vector2( 0, 540 )
 focus_mode = 2
 theme = ExtResource( 4 )
-custom_fonts/italics_font = ExtResource( 3 )
-custom_fonts/bold_font = ExtResource( 2 )
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/italics_font = SubResource( 7 )
+custom_fonts/bold_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 9 )
 bbcode_enabled = true
 selection_enabled = true
 
@@ -227,7 +361,7 @@ visible = false
 margin_top = 64.0
 margin_right = 400.0
 margin_bottom = 85.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
 bbcode_text = "LINKS"
 text = "LINKS"
@@ -235,4 +369,10 @@ fit_content_height = true
 __meta__ = {
 "_editor_description_": ""
 }
-[connection signal="pressed" from="CommentsContainer/CommentsButtonsContainer/SeeCommentsButton" to="." method="_on_see_comments"]
+
+[node name="Tuto" parent="." instance=ExtResource( 6 )]
+position = Vector2( 204, 75 )
+z_index = -1
+
+[connection signal="pressed" from="CommentsContainer/CommentsButtonsContainer/SeeCommentsButton" to="." method="_on_see_comments" flags=3]
+[connection signal="pressed" from="CommentsContainer/CommentsButtonsContainer/SeeCommentsButton" to="Tuto" method="_on_see_comments"]

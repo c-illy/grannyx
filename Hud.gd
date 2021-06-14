@@ -38,7 +38,7 @@ func _ready():
 	var i = 0
 	var selecLang = 0
 	for lang in langs :
-		lc.add_item(lang, i)
+		lc. add_icon_item(load("res://flag_%s.png" % lang), lang, i)
 #		print("%s : %s" % [lang, i])
 		if(lang in TranslationServer.get_locale()) :
 			selecLang = i

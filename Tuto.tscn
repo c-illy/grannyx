@@ -1,17 +1,332 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Edge.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tuto.gd" type="Script" id=2]
+[ext_resource path="res://hand.png" type="Texture" id=3]
+[ext_resource path="res://font/DroidSans.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://font/droid_sans.tres" type="DynamicFont" id=5]
+[ext_resource path="res://font/droid_sans_bold.tres" type="DynamicFont" id=6]
+[ext_resource path="res://font/droid_serif_italic.tres" type="DynamicFont" id=7]
+[ext_resource path="res://font/DroidSansFallback.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 8.0
+content_margin_right = 5.0
+content_margin_top = 4.0
+content_margin_bottom = 5.0
+bg_color = Color( 0, 0, 0, 0.345098 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 7.0
+content_margin_right = 6.0
+content_margin_top = 3.0
+content_margin_bottom = 6.0
+bg_color = Color( 1, 1, 1, 0.0509804 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.627451, 0.627451, 0.627451, 1 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+corner_detail = 5
+
+[sub_resource type="Theme" id=3]
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = SubResource( 1 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 1, 0.603922, 0.388235, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = null
+LineEdit/styles/read_only = null
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = SubResource( 2 )
+SpinBox/icons/updown = null
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=5]
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = SubResource( 1 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 1, 0.603922, 0.388235, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = null
+LineEdit/styles/read_only = null
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = SubResource( 2 )
+SpinBox/icons/updown = null
+
+[sub_resource type="StyleBoxEmpty" id=6]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id=7]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+use_filter = true
+font_data = ExtResource( 4 )
+fallback/0 = ExtResource( 8 )
 
 [node name="Tuto" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Arrow" parent="." instance=ExtResource( 1 )]
-position = Vector2( 69.8953, -1.1384 )
-rotation = -3.205
+[node name="TutoX" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="TutoX"]
+position = Vector2( -1.78643, 4.06512 )
+color = Color( 0.309804, 0.337255, 0.0235294, 1 )
+polygon = PoolVector2Array( -11, 0, -11, 11, 0, 11, 0, 0 )
+
+[node name="Arrow" parent="TutoX" instance=ExtResource( 1 )]
+position = Vector2( 62.5536, -41.6171 )
+rotation = 2.47039
 scale = Vector2( 5, 5 )
+
+[node name="Sprite4" type="Sprite" parent="TutoX"]
+position = Vector2( 28.0717, 24.4205 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="TutoY" type="Node2D" parent="."]
+visible = false
+
+[node name="HContainer" type="VBoxContainer" parent="TutoY"]
+margin_left = -34.0772
+margin_top = -157.762
+margin_right = 80.9228
+margin_bottom = 141.238
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bubble" type="RichTextLabel" parent="TutoY/HContainer"]
+margin_right = 115.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 100, 115 )
+rect_clip_content = false
+focus_mode = 2
+size_flags_vertical = 8
+theme = SubResource( 3 )
+custom_fonts/italics_font = ExtResource( 7 )
+custom_fonts/bold_font = ExtResource( 6 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0.501961, 1, 0.65098, 1 )
+bbcode_enabled = true
+bbcode_text = "Y_HERE,\"[i]y[/i] is the height of the column ({y} bars)\"
+Y_HERE_X,\"[color=#e68aff]([i]x[/i] is the number of new columns)[/color]\"
+44"
+text = "Y_HERE,\"y is the height of the column ({y} bars)\"
+Y_HERE_X,\"(x is the number of new columns)\"
+44"
+scroll_active = false
+selection_enabled = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="BubbleBis" type="RichTextLabel" parent="TutoY/HContainer/Bubble"]
+margin_left = 123.0
+margin_top = -32.0
+margin_right = 283.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 170, 110 )
+rect_clip_content = false
+focus_mode = 2
+theme = SubResource( 5 )
+custom_fonts/italics_font = ExtResource( 7 )
+custom_fonts/bold_font = ExtResource( 6 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0.501961, 1, 0.65098, 1 )
+bbcode_enabled = true
+bbcode_text = "\"Exponential is formidable !
+Each bar of the previous colulmn becomes 
+[color=#ff9a63][i]b[/i][/color] bars in the new column.
+Here : {prev_y} becomes [i]b × {prev_y}[/i]\""
+text = "\"Exponential is formidable !
+Each bar of the previous colulmn becomes 
+b bars in the new column.
+Here : {prev_y} becomes b × {prev_y}\""
+fit_content_height = true
+scroll_active = false
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="BubbleTail" type="Line2D" parent="TutoY/HContainer"]
+position = Vector2( -16.8855, -60.4182 )
+z_index = -1
+points = PoolVector2Array( 58.6919, 174.28, 56.0162, 191.672, 65.3348, 180.342, 67.8392, 174.135 )
+width = 2.0
+default_color = Color( 0.627451, 0.627451, 0.627451, 1 )
+sharp_limit = 6.0
+antialiased = true
+
+[node name="Recap" type="RichTextLabel" parent="."]
+visible = false
+margin_left = -190.0
+margin_top = 180.0
+margin_right = -60.0
+margin_bottom = 429.0
+rect_min_size = Vector2( 130, 90 )
+rect_clip_content = false
+focus_mode = 2
+theme = SubResource( 5 )
+custom_fonts/italics_font = ExtResource( 7 )
+custom_fonts/bold_font = ExtResource( 6 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0.501961, 1, 0.65098, 1 )
+bbcode_enabled = true
+bbcode_text = "\"Les colonnes sont successivement
+1
+b
+b × b
+b × b × b
+b × b × b × b
+b ×      …      × b
+Ce qui s'écrit en maths :
+
+
+C'est-à-dire : l'exponentielle !\""
+text = "\"Les colonnes sont successivement
+1
+b
+b × b
+b × b × b
+b × b × b × b
+b ×      …      × b
+Ce qui s'écrit en maths :
+
+
+C'est-à-dire : l'exponentielle !\""
+fit_content_height = true
+scroll_active = false
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="Recap"]
+margin_left = 56.0
+margin_top = 172.0
+margin_right = 96.0
+margin_bottom = 203.0
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0.603922, 0.388235, 1 )
+text = "b"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Recap/Label"]
+margin_left = 8.0
+margin_top = -8.0
+margin_right = 48.0
+margin_bottom = 23.0
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.901961, 0.541176, 1, 1 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutoComments" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 685, -71 )
+rotation = 2.81537
+scale = Vector2( 5, 5 )
+
+[node name="Sprite5" type="Sprite" parent="TutoComments"]
+position = Vector2( 10.1394, -11.5604 )
+rotation = -2.81537
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 3 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_timeout"]
