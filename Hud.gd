@@ -76,4 +76,5 @@ func _on_LinksLabel_meta_clicked(meta):
 
 func _on_window_resize():
 	$CommentsContainer/CommentsLabel.rect_min_size.y = OS.window_size.y - 120
+	$CommentsContainer/LinksLabel.parse_bbcode(tr("LINKS"))
 
