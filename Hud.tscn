@@ -240,15 +240,15 @@ margin_right = 233.0
 margin_bottom = 169.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ZoomYContainer"]
-margin_top = 41.0
-margin_right = 46.0
-margin_bottom = 58.0
+margin_top = 40.0
+margin_right = 51.0
+margin_bottom = 59.0
 custom_colors/font_color = Color( 0.639216, 0.639216, 0.639216, 1 )
 text = "zoom y"
 
 [node name="ZoomYSlider" type="VSlider" parent="CurveOptionsContainer/ZoomYContainer"]
-margin_left = 50.0
-margin_right = 66.0
+margin_left = 55.0
+margin_right = 71.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 1
@@ -261,18 +261,18 @@ exp_edit = true
 [node name="ZoomXContainer" type="HBoxContainer" parent="CurveOptionsContainer"]
 margin_top = 173.0
 margin_right = 233.0
-margin_bottom = 190.0
+margin_bottom = 192.0
 
 [node name="Label" type="Label" parent="CurveOptionsContainer/ZoomXContainer"]
-margin_right = 46.0
-margin_bottom = 17.0
+margin_right = 51.0
+margin_bottom = 19.0
 custom_colors/font_color = Color( 0.639216, 0.639216, 0.639216, 1 )
 text = "zoom x"
 
 [node name="ZoomXSlider" type="HSlider" parent="CurveOptionsContainer/ZoomXContainer"]
-margin_left = 50.0
-margin_right = 150.0
-margin_bottom = 17.0
+margin_left = 55.0
+margin_right = 155.0
+margin_bottom = 19.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 1
 min_value = 0.4
@@ -311,13 +311,13 @@ __meta__ = {
 
 [node name="CommentsButtonsContainer" type="HBoxContainer" parent="CommentsContainer"]
 margin_right = 400.0
-margin_bottom = 23.0
+margin_bottom = 25.0
 alignment = 2
 
 [node name="SeeCommentsButton" type="Button" parent="CommentsContainer/CommentsButtonsContainer"]
 margin_left = 246.0
 margin_right = 354.0
-margin_bottom = 23.0
+margin_bottom = 25.0
 size_flags_horizontal = 8
 custom_fonts/font = SubResource( 4 )
 toggle_mode = true
@@ -332,14 +332,14 @@ __meta__ = {
 [node name="Control" type="Control" parent="CommentsContainer/CommentsButtonsContainer"]
 margin_left = 358.0
 margin_right = 367.0
-margin_bottom = 23.0
+margin_bottom = 25.0
 rect_min_size = Vector2( 9, 0 )
 size_flags_stretch_ratio = 0.0
 
 [node name="LangChoice" type="OptionButton" parent="CommentsContainer/CommentsButtonsContainer"]
 margin_left = 371.0
 margin_right = 400.0
-margin_bottom = 23.0
+margin_bottom = 25.0
 size_flags_horizontal = 8
 
 [node name="CommentsLabel" type="RichTextLabel" parent="CommentsContainer"]

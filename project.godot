@@ -35,6 +35,7 @@ channel_disable_time=0.01
 [autoload]
 
 Models="*res://Models.tscn"
+StringMisc="*res://StringMisc.tscn"
 
 [debug]
 
