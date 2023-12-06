@@ -41,8 +41,8 @@ public class Column : Node2D
 			if((0 < x) && (x < 3))
 			{
 				EdgesColumn e = (EdgesColumn)EdgesColumn.Instance();
-				e.edgesCount = unitsCount;
-				e.unitHeight = Models.d.unitHeight;
+				// e.edgesCount = unitsCount;
+				// e.unitHeight = Models.d.unitHeight;
 				AddChild(e);
 //				e.Position.x = -Models.unitWidth;
 				e.MoveLocalX(-Models.d.unitWidth);
